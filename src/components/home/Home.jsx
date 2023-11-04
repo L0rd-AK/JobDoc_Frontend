@@ -1,6 +1,5 @@
 import Banner from "./Banner";
 import JobCatagory from "./JobCatagory";
-import JobTable from "./JobTable";
 import Navbar from "./Navbar";
 
 const Home = () => {
@@ -9,7 +8,6 @@ const Home = () => {
             <Navbar></Navbar>
             <Banner></Banner>
             <JobCatagory></JobCatagory>
-            <JobTable></JobTable>
         </div>
     );
 };

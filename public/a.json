@@ -1,0 +1,57 @@
+[
+    {
+      "Job_Type": "On Site Job",
+      "Name": "John Doe",
+      "Job_Title": "Software Engineer",
+      "Job_Posting_Date": "2023-11-01",
+      "Application_Deadline": "2023-12-01",
+      "Salary_Range": "$50000 - $70000",
+      "Job_Applicants_Number": 50
+    },
+    {
+      "Job_Type": "On Site Job",
+      "Name": "Jane Smith",
+      "Job_Title": "Data Analyst",
+      "Job_Posting_Date": "2023-11-02",
+      "Application_Deadline": "2023-12-02",
+      "Salary_Range": "$60000 - $80000",
+      "Job_Applicants_Number": 45
+    },
+    {
+      "Job_Type": "Remote Job",
+      "Name": "Alice Johnson",
+      "Job_Title": "Web Developer",
+      "Job_Posting_Date": "2023-11-03",
+      "Application_Deadline": "2023-12-03",
+      "Salary_Range": "$70000 - $90000",
+      "Job_Applicants_Number": 60
+    },
+    {
+      "Job_Type": "Remote Job",
+      "Name": "Bob Williams",
+      "Job_Title": "UX Designer",
+      "Job_Posting_Date": "2023-11-04",
+      "Application_Deadline": "2023-12-04",
+      "Salary_Range": "$80000 - $100000",
+      "Job_Applicants_Number": 55
+    },
+    {
+      "Job_Type": "Part Time Job",
+      "Name": "Charlie Brown",
+      "Job_Title": "Content Writer",
+      "Job_Posting_Date": "2023-11-05",
+      "Application_Deadline": "2023-12-05",
+      "Salary_Range": "$20000 - $30000",
+      "Job_Applicants_Number": 40
+    },
+    {
+      "Job_Type": "Part Time Job",
+      "Name": "Daisy Miller",
+      "Job_Title": "Graphic Designer",
+      "Job_Posting_Date": "2023-11-06",
+      "Application_Deadline": "2023-12-06",
+      "Salary_Range": "$25000 - $35000",
+      "Job_Applicants_Number": 35
+    }
+  ]
+  
