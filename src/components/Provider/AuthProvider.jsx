@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
-import app from "../frebase/firebase.config";
+import app from "../Frebase/firebase.config";
 import PropTypes from 'prop-types';
 export const AuthContext = createContext(null);
 
@@ -13,7 +13,7 @@ const AuthProvider = ({ children }) => {
     const [toogle, setToogle] = useState(false);
     const [name, setName] = useState(true);
     const [pic, setPic] = useState(true);
-    
+
     const createUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
