@@ -1,7 +1,7 @@
 
 const Footer = () => {
     return (
-        <div className="mt-32">
+        <div className="">
 
             <footer className="bg-white dark:bg-gray-900">
                 <div className="mx-auto w-full max-w-screen-xl">
