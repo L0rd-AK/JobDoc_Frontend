@@ -14,8 +14,8 @@ const AllJobs = () => {
     return (
         <div>
             <AllJobBanner></AllJobBanner>
-            {/* <JobCatagory></JobCatagory> */}
-            <div className='max-w-7xl mx-auto mt-20'>
+            
+            <div className='max-w-7xl mx-auto mt-20 mb-20'>
                 <div>
                 <h1 className="text-black font-bold text-5xl text-center mb-10">Latest jobs</h1>
                 </div>
