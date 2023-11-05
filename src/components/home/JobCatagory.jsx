@@ -10,7 +10,9 @@ const JobCatagory = () => {
     useEffect(()=>{
         fetch('http://localhost:5000/all-jobs')
         .then(res=>res.json())
-        .then(data=>setData(data))
+        .then(data=>{
+            setData(data);
+        })
     },[active])
     const handelCategoryJobs=(id)=>{
         setActive(id);
@@ -46,6 +48,8 @@ const JobCatagory = () => {
                     </thead>
                     <tbody>
                     {
+                        active==='all-job'?
+                        data.map(job=> <JobTable key={job._id} job={job}></JobTable>):
                         jobs.map(job=> <JobTable key={job._id} job={job}></JobTable>)
                     }
                     </tbody>
