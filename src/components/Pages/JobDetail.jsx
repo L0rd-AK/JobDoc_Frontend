@@ -86,7 +86,7 @@ const JobDetail = () => {
                         </div>
                         
 
-                        <button className='btn bg-[#1CA774] text-white font-semibold w-full'>Submit</button>
+                        <button className='btn bg-[#1CA774] text-white font-semibold w-full'>Apply</button>
                     </div>
                 </div>
             </div>
