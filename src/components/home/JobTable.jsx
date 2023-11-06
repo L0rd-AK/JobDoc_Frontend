@@ -32,7 +32,7 @@ const JobTable = ({ job }) => {
             <td className="text-center">{Job_Applicants_Number}</td>
             <td className="text-center">{Salary_Range}</td>
             <th>
-                <Link to={`/job-details/${_id}`}><button className="btn bg-[#1CA774] btn-ghost btn-xs">details</button></Link>
+                <Link to={`/all-jobs/${_id}`}><button className="btn bg-[#1CA774] btn-ghost btn-xs">details</button></Link>
             </th>
         </tr>
     );
