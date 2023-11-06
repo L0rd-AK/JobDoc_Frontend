@@ -29,33 +29,15 @@ const AddAjob = () => {
                     </div>
                     <div className="w-full">
                         <label name="name" className="block mb-2 text-sm font-medium text-black">User Name</label>
-                        <input type="text" name="name" id="name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="URL" required="" />
+                        <input type="text" name="name" id="name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="User name" required="" />
                     </div>
                     <div className="w-full">
                         <label name="price" className="block mb-2 text-sm font-medium text-black">Salary</label>
                         <input type="number" name="price" id="price" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="$2999" required="" />
                     </div>
-                    <div>
-                        <label name="type" className="block mb-2 text-sm font-medium text-black">Product Type</label>
-                        <select id="type" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-                            <option selected="">Select Type</option>
-                            <option value="Electric car">Electric car</option>
-                            <option value="Disel car">Disel Car</option>
-                            <option value="Super car">Super Car</option>
-                            <option value="SUV">SUV</option>
-                            <option value="Sport car">Sports car</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label name="rating" className="block mb-2 text-sm font-medium text-black">Rating</label>
-                        <select  id="rating" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-                            <option selected="">Rating</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
+                    <div className="w-full">
+                        <label name="price" className="block mb-2 text-sm font-medium text-black">Job Posted on</label>
+                        <input type="number" name="price" id="price" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="date" required="" />
                     </div>
                     <div className="sm:col-span-2">
                         <label name="description" className="block mb-2 text-sm font-medium text-black">Description</label>

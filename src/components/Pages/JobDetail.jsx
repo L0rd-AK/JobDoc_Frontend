@@ -9,7 +9,7 @@ const JobDetail = () => {
     console.log(job);
     const { Application_Deadline, Salary_Range, Job_Title, Job_Type, Name, Company_Logo, Job_Description } = job;
     return (
-        <div className='mt-5 bg-[#f1f5f8]'>
+        <div className='mt-5 pb-16 bg-[#f1f5f8]'>
             <div className='bg-[#081721] rounded-r-full mr-10'>
                 <div className=' flex gap-10 max-w-7xl mx-auto'>
                     <div className=' w-3/4 p-5 '>
@@ -74,10 +74,19 @@ const JobDetail = () => {
                 </div>
                 <div className='w-1/4 bg-white p-10 rounded-lg'>
                     <h1 className='text-black font-bold text-3xl mb-3'>Ready To Apply?</h1>
-                    <p>Complete the eligibities checklist now and get started with your online application</p>
-                    <div>
-                    <input type="text" placeholder="Name..." className="input input-bordered input-accent w-full bg-transparent" />
-                    <input type="text" placeholder="Email.." className="input input-bordered input-accent w-full bg-transparent" />
+                    <p className='text-sm mb-4'>Complete the eligibities checklist now and get started with your online application</p>
+                    <div className='space-y-3'>
+                        <input type="text" placeholder="Email..." className="input input-bordered input-accent w-full bg-transparent" />
+                        <input type="text" placeholder="CV URL.." className="input input-bordered input-accent w-full bg-transparent" />
+
+                        
+                        <div className="flex items-center mb-4">
+                            <input id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+                                <label htmlFor="default-checkbox" className="ml-2 text-sm font-medium text-black ">Get Job Alart</label>
+                        </div>
+                        
+
+                        <button className='btn bg-[#1CA774] text-white font-semibold w-full'>Submit</button>
                     </div>
                 </div>
             </div>
