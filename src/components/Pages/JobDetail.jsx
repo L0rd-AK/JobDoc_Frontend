@@ -1,13 +1,36 @@
+import { useContext } from 'react';
 import { FaBusinessTime, FaLocationDot, FaSackDollar } from 'react-icons/fa6';
 import { LiaDotCircle } from 'react-icons/lia';
 import { useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const JobDetail = () => {
-
+    const { user } = useContext(AuthContext);
     const job = useLoaderData();
+    const { _id,Application_Deadline, Salary_Range, Job_Title, Job_Type, Name, Company_Logo, Job_Description,Job_Applicants_Number,userEmail,posted } = job;
 
-    console.log(job);
-    const { Application_Deadline, Salary_Range, Job_Title, Job_Type, Name, Company_Logo, Job_Description } = job;
+    const AppliedJob={Applied: true,Job_Applicants_Number:parseFloat(Job_Applicants_Number)+1,userEmail: user.email}
+    const handelApply=()=>{
+        fetch(`http://localhost:5000/applied-jobs/${_id}`, {
+            method: 'PUT',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(AppliedJob),
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Successfully Applied',
+                    })
+                }
+                console.log(data);
+            })
+    }
+
     return (
         <div className='mt-5 pb-16 bg-[#f1f5f8]'>
             <div className='bg-[#081721] rounded-r-full mr-10'>
@@ -17,7 +40,7 @@ const JobDetail = () => {
                             <h1 className='text-3xl'>{Job_Title}</h1>
                             <h3 className='badge bg-white text-black font-semibold'>{Job_Type}</h3>
                             <h3 className='font-bold text-2xl'>Posted By: <span className='text-[#1CA774]'>{Name}</span></h3>
-                            <h3 className='font-bold '>Deadline: <span className='text-red-600'>{Application_Deadline}</span></h3>
+                            <h3 className='font-bold '>Deadline: <span className='text-red-600'>{Application_Deadline.slice(0,10)}</span></h3>
                             <div className='flex gap-5'>
                                 <div className='flex items-center gap-3'>
                                     <div className='text-[#1CA774] text-5xl'><FaBusinessTime></FaBusinessTime></div>
@@ -86,7 +109,12 @@ const JobDetail = () => {
                         </div>
                         
 
-                        <button className='btn bg-[#1CA774] text-white font-semibold w-full'>Apply</button>
+                        {
+                            posted && userEmail===user.email?
+                            <button className='btn bg-warning text-white font-semibold w-full'>View Applicants</button>:
+                            <button onClick={handelApply} className='btn bg-[#1CA774] text-white font-semibold w-full'>Apply</button>
+                            
+                        }
                     </div>
                 </div>
             </div>

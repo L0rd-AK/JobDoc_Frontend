@@ -27,6 +27,7 @@ const AllJobs = () => {
                             <th className="text-black text-lg ">Job Title</th>
                             <th className="text-black text-lg ">Job Posting Date</th>
                             <th className="text-black text-lg ">Application Deadline</th>
+                            <th className="text-black text-lg ">Job Applicants Number</th>
                             <th className="text-black text-lg ">Salary Range</th>
                             <th className="text-black text-lg ">Details</th>
                         </tr>

@@ -20,7 +20,8 @@ const AddAjob = () => {
         const Job_Posting_Date = form.get('postedDate');
         const Application_Deadline = form.get('deadline');
         const Job_Description = form.get('description');
-        const newJob={Job_Title,Job_Type,Company_Logo,Name,Salary_Range,Job_Applicants_Number,Job_Posting_Date,Application_Deadline,Job_Description,userEmail};
+        const posted=true;
+        const newJob={Job_Title,Job_Type,Company_Logo,Name,Salary_Range,Job_Applicants_Number,Job_Posting_Date,Application_Deadline,Job_Description,userEmail,posted};
         fetch(`http://localhost:5000/all-jobs`,{
             method:'POST',
             headers: {
@@ -61,6 +62,7 @@ const AddAjob = () => {
                             <option value="On Site Job">On Site Job</option>
                             <option value="Remote Job">Remote Job</option>
                             <option value="Part Time Job">Part Time Job</option>
+                            <option value="Hybrid">Hybrid</option>
                         </select>
                     </div>
                     <div className="w-full">

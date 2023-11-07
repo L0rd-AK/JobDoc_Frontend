@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-const JobTable = ({ job }) => {
-    const { _id,Application_Deadline, Salary_Range, Job_Posting_Date, Job_Title, Job_Type, Name, Company_Logo,Job_Applicants_Number} = job;
+const AppliedJobTable = ({job}) => {
+    const {Application_Deadline, Salary_Range, Job_Posting_Date, Job_Title, Job_Type, Name, Company_Logo,Job_Applicants_Number} = job;
     return (
         <tr>
             <td>
@@ -32,10 +32,10 @@ const JobTable = ({ job }) => {
             <td className="text-center">{Job_Applicants_Number}</td>
             <td className="text-center">${Salary_Range}</td>
             <th>
-                <Link to={`/all-jobs/${_id}`}><button className="btn bg-[#1CA774] btn-ghost btn-xs">details</button></Link>
+                <Link><button className="btn bg-warning btn-ghost btn-md text-white">Pending</button></Link>
             </th>
         </tr>
     );
 };
 
-export default JobTable;
+export default AppliedJobTable;

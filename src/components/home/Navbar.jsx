@@ -14,7 +14,7 @@ const Navbar = () => {
                     <li className="text-lg px-5 py-2"><NavLink to="/blogs">Blogs</NavLink></li>
                     <li className="text-lg px-5 py-2"><NavLink to="/add-a-job">Add a Job</NavLink></li>
                     <li className="text-lg px-5 py-2"><NavLink to='/my-jobs'>My Jobs</NavLink></li>
-                    <li className="text-lg px-5 py-2"><NavLink to="/applied-jobs">Applied Jobs</NavLink></li>
+                    <li className="text-lg px-5 py-2"><NavLink to={`/applied-jobs/${user.email}`}>Applied Jobs</NavLink></li>
                 </div>
                 :
                 <div className='flex'>

@@ -56,12 +56,12 @@ const MyJobTable = ({job,setMyJobs,myjobs}) => {
                 </div>
 
             </td>
-            <td className="text-center">{Job_Posting_Date}</td>
-            <td className="text-center">{Application_Deadline}</td>
+            <td className="text-center">{Job_Posting_Date.slice(0,10)}</td>
+            <td className="text-center">{Application_Deadline.slice(0,10)}</td>
             <td className="text-center">{Job_Applicants_Number}</td>
             <td className="text-center">${Salary_Range}</td>
             <td><Link className="w-full" to={`/update/${_id}`}><div className="flex justify-center items-center h-[72px] text-accent text-2xl"><FaEdit></FaEdit></div></Link></td>
-            <td><Link className="w-full" onClick={handelDelete}><div className="flex justify-center items-center h-[72px] text-accent text-2xl"><AiFillDelete></AiFillDelete></div></Link></td>
+            <td><Link className="w-full" onClick={handelDelete}><div className="flex justify-center items-center h-[72px] text-red-600 text-2xl"><AiFillDelete></AiFillDelete></div></Link></td>
         </tr>
     );
 };

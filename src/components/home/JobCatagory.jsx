@@ -30,7 +30,7 @@ const JobCatagory = () => {
                     <Link onClick={()=>handelCategoryJobs('On Site Job')} className={active=='On Site Job'?`text-lg font-bold px-5 py-2 active`:`text-lg font-bold px-5 py-2`}> On Site Job</Link>
                     <Link onClick={()=>handelCategoryJobs('Remote Job')} className={active=='Remote Job'?`text-lg font-bold px-5 py-2 active`:`text-lg font-bold px-5 py-2`}> Remote Job</Link>
                     <Link onClick={()=>handelCategoryJobs('Part Time Job')} className={active=='Part Time Job'?`text-lg font-bold px-5 py-2 active`:`text-lg font-bold px-5 py-2`}> Part Time</Link>
-                    <Link onClick={()=>handelCategoryJobs('hybrid')} className={active=='hybrid'?`text-lg font-bold px-5 py-2 active`:`text-lg font-bold px-5 py-2`}> Hybride</Link>
+                    <Link onClick={()=>handelCategoryJobs('Hybrid')} className={active=='Hybrid'?`text-lg font-bold px-5 py-2 active`:`text-lg font-bold px-5 py-2`}> Hybride</Link>
                 </div>
             </div>
             <div className='mt-10'>
