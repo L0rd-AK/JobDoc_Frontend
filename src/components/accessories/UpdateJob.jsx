@@ -1,14 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import Swal from "sweetalert2";
-const AddAjob = () => {
+import DatePicker from "react-datepicker";
+const UpdateJob = () => {
     const {user} = useContext(AuthContext);
     const [userEmail,setUserEmail]=useState([])
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
-    const AddJob=(e)=>{
+    const UpdateJob=(e)=>{
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const Job_Title = form.get('title');
@@ -48,7 +47,7 @@ const AddAjob = () => {
         <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
             <h2 className="mb-10 text-2xl font-bold text-black ">Post a new Job</h2>
             <namem action="#">
-                <form onSubmit={AddJob}>
+                <form onSubmit={UpdateJob}>
                 <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
                     <div className="w-full">
                         <label name="title" className="block mb-2 text-sm font-medium text-black">Job Title</label>
@@ -102,4 +101,4 @@ const AddAjob = () => {
     );
 };
 
-export default AddAjob;
+export default UpdateJob;

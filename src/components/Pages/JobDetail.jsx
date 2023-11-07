@@ -37,7 +37,7 @@ const JobDetail = () => {
                                     <div className='text-[#1CA774] text-5xl'><FaSackDollar></FaSackDollar></div>
                                     <div>
                                         <div className='font-bold'>Salary</div>
-                                        <div>{Salary_Range}</div>
+                                        <div>${Salary_Range}</div>
                                     </div>
                                 </div>
                             </div>
