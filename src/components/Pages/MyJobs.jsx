@@ -12,7 +12,6 @@ const MyJobs = () => {
             setMyJobs(data);
         })
     },[user.email])
-    console.log(myjobs);
     return (
         <div className='mt-10 mb-16 max-w-7xl mx-auto'>
             <h1 className="text-center text-black font-bold text-5xl mb-5">Job Posted by me:</h1>
