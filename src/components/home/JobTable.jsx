@@ -22,7 +22,7 @@ const JobTable = ({ job }) => {
                     <div>
                         {Job_Title}
                         <br />
-                        <span className="badge badge-ghost badge-sm bg-black text-white">{Job_Type}</span>
+                        <span className="badge badge-ghost badge-sm bg-black text-white ">{Job_Type}</span>
                     </div>
                 </div>
 

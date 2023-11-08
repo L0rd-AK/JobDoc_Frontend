@@ -8,7 +8,9 @@ const JobCatagory = () => {
     const [jobs,setJobs]=useState([]);
     const [data,setData]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/all-jobs')
+        fetch('http://localhost:5000/all-jobs',{
+            credentials: "include",
+        })
         .then(res=>res.json())
         .then(data=>{
             setData(data);
@@ -24,16 +26,16 @@ const JobCatagory = () => {
     return (
         <div className="mt-16 max-w-7xl mx-auto mb-20">
             <div className='flex flex-col items-center'>
-                <h1 className="text-black font-bold text-5xl">Find your Dream job by category</h1>
+                <h1 className="text-black font-bold text-4xl lg:text-5xl text-center">Find your Dream job by category</h1>
                 <div className="flex  mt-10">
                     <Link onClick={()=>handelCategoryJobs('all-job')} className={active=='all-job'?`text-lg font-bold px-5 py-2 active`:`text-lg font-bold px-5 py-2`}> All Jobs</Link>
                     <Link onClick={()=>handelCategoryJobs('On Site Job')} className={active=='On Site Job'?`text-lg font-bold px-5 py-2 active`:`text-lg font-bold px-5 py-2`}> On Site Job</Link>
                     <Link onClick={()=>handelCategoryJobs('Remote Job')} className={active=='Remote Job'?`text-lg font-bold px-5 py-2 active`:`text-lg font-bold px-5 py-2`}> Remote Job</Link>
                     <Link onClick={()=>handelCategoryJobs('Part Time Job')} className={active=='Part Time Job'?`text-lg font-bold px-5 py-2 active`:`text-lg font-bold px-5 py-2`}> Part Time</Link>
-                    <Link onClick={()=>handelCategoryJobs('Hybrid')} className={active=='Hybrid'?`text-lg font-bold px-5 py-2 active`:`text-lg font-bold px-5 py-2`}> Hybride</Link>
+                    <Link onClick={()=>handelCategoryJobs('Hybrid')} className={active=='Hybrid'?`text-lg font-bold px-5 py-2 active`:`text-lg font-bold px-5 py-2`}>Hybride</Link>
                 </div>
             </div>
-            <div className='mt-10'>
+            <div className='mt-10 overflow-auto'>
                 <table className="table">
                     {/* head */}
                     <thead>

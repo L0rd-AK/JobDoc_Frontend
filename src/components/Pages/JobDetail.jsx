@@ -40,7 +40,7 @@ const JobDetail = () => {
                             <h1 className='text-3xl'>{Job_Title}</h1>
                             <h3 className='badge bg-white text-black font-semibold'>{Job_Type}</h3>
                             <h3 className='font-bold text-2xl'>Posted By: <span className='text-[#1CA774]'>{Name}</span></h3>
-                            <h3 className='font-bold '>Deadline: <span className='text-red-600'>{Application_Deadline.slice(0,10)}</span></h3>
+                            <h3 className='font-bold '>Deadline: <span className='text-red-600'>{Application_Deadline?.slice(0,10)}</span></h3>
                             <div className='flex gap-5'>
                                 <div className='flex items-center gap-3'>
                                     <div className='text-[#1CA774] text-5xl'><FaBusinessTime></FaBusinessTime></div>

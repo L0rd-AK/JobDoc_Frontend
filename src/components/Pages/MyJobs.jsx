@@ -6,7 +6,7 @@ const MyJobs = () => {
     const { user } = useContext(AuthContext);
     const [myjobs,setMyJobs]=useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/my-jobs/${user.email}`)
+        fetch(`http://localhost:5000/my-jobs/${user.email}`,{credentials: "include",})
         .then(res=>res.json())
         .then(data=>{
             setMyJobs(data);
@@ -14,7 +14,8 @@ const MyJobs = () => {
     },[user.email])
     return (
         <div className='mt-10 mb-16 max-w-7xl mx-auto'>
-            <h1 className="text-center text-black font-bold text-5xl mb-5">Job Posted by me:</h1>
+            <h1 className="text-center text-black font-bold text-3xl lg:text-5xl mb-5">Job Posted by me:</h1>
+                <div className="overflow-auto">
                 <table className="table">
                     {/* head */}
                     <thead>
@@ -36,6 +37,7 @@ const MyJobs = () => {
                     </tbody>
                     
                 </table>
+                </div>
             </div>
     );
 };
