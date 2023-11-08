@@ -12,7 +12,7 @@ const JobDetail = () => {
 
     const AppliedJob={Applied: true,Job_Applicants_Number:parseFloat(Job_Applicants_Number)+1,userEmail: user.email}
     const handelApply=()=>{
-        fetch(`http://localhost:5000/applied-jobs/${_id}`, {
+        fetch(`https://jobdoc.vercel.app/applied-jobs/${_id}`, {
             method: 'PUT',
             headers: {
                 "Content-Type": "application/json",

@@ -7,7 +7,7 @@ const AppliedJobs = () => {
     return (
         <div className="mt-5 max-w-7xl mx-auto">
              <h1 className="text-black font-bold text-5xl text-center">Jobs You have applied</h1>
-             <div className='mt-10'>
+             <div className='mt-10 overflow-auto'>
                 <table className="table">
                     {/* head */}
                     <thead>

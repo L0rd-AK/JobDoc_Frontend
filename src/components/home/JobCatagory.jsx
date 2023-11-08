@@ -3,20 +3,25 @@ import '../home/JobCatagory.css'
 import { useEffect, useState } from 'react';
 import JobTable from './JobTable';
 
-const JobCatagory = () => {
+const JobCatagory = ({searchJob}) => {
     const [active,setActive]=useState('all-job');
     const [jobs,setJobs]=useState([]);
     const [data,setData]=useState([]);
+    const [search,setSearch]=useState([]);
+    console.log(searchJob);
+    
     useEffect(()=>{
-        fetch('http://localhost:5000/all-jobs',{
+        setSearch(searchJob);
+        fetch('https://jobdoc.vercel.app/all-jobs',{
             credentials: "include",
         })
         .then(res=>res.json())
         .then(data=>{
             setData(data);
         })
-    },[active])
+    },[active,searchJob])
     const handelCategoryJobs=(id)=>{
+        setSearch([]);
         setActive(id);
         const filteredData=data.filter(job=>job.Job_Type===id);
         console.log(filteredData);
@@ -27,7 +32,7 @@ const JobCatagory = () => {
         <div className="mt-16 max-w-7xl mx-auto mb-20">
             <div className='flex flex-col items-center'>
                 <h1 className="text-black font-bold text-4xl lg:text-5xl text-center">Find your Dream job by category</h1>
-                <div className="flex  mt-10">
+                <div className="flex flex-wrap justify-center  mt-10">
                     <Link onClick={()=>handelCategoryJobs('all-job')} className={active=='all-job'?`text-lg font-bold px-5 py-2 active`:`text-lg font-bold px-5 py-2`}> All Jobs</Link>
                     <Link onClick={()=>handelCategoryJobs('On Site Job')} className={active=='On Site Job'?`text-lg font-bold px-5 py-2 active`:`text-lg font-bold px-5 py-2`}> On Site Job</Link>
                     <Link onClick={()=>handelCategoryJobs('Remote Job')} className={active=='Remote Job'?`text-lg font-bold px-5 py-2 active`:`text-lg font-bold px-5 py-2`}> Remote Job</Link>
@@ -49,14 +54,22 @@ const JobCatagory = () => {
                             <th className="text-black text-lg ">Details</th>
                         </tr>
                     </thead>
-                    <tbody>
                     {
-                        active==='all-job'?
-                        data.map(job=> <JobTable key={job._id} job={job}></JobTable>):
-                        jobs.map(job=> <JobTable key={job._id} job={job}></JobTable>)
+                        search.length>0?
+                        <tbody>
+                        {
+                            search.map(job=> <JobTable key={job._id} job={job}></JobTable>)
+                        }
+                        </tbody>
+                        :
+                        <tbody>
+                        {
+                            active==='all-job'?
+                            data.map(job=> <JobTable key={job._id} job={job}></JobTable>):
+                            jobs.map(job=> <JobTable key={job._id} job={job}></JobTable>)
+                        }
+                        </tbody>
                     }
-                    </tbody>
-                    
                 </table>
             </div>
         </div>

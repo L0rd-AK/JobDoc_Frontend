@@ -32,7 +32,7 @@ const UpdateJob = () => {
         const Job_Applicants_Number = form.get('Job_Applicants_Number');
         const Job_Description = form.get('description');
         const updatedJob = { Job_Title, Job_Type: selected_jobType, Company_Logo, Name, Salary_Range, Job_Applicants_Number, Job_Posting_Date: startDate, Application_Deadline: endDate, Job_Description };
-        fetch(`http://localhost:5000/all-jobs/${machedJob._id}`, {
+        fetch(`https://jobdoc.vercel.app/all-jobs/${machedJob._id}`, {
             method: 'PUT',
             headers: {
                 "Content-Type": "application/json",

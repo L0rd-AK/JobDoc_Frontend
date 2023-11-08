@@ -3,6 +3,10 @@ import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWith
 import app from "../Firebase/firebase.config";
 import PropTypes from 'prop-types';
 import axios from "axios";
+// =============== helmet =====================
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 export const AuthContext = createContext(null);
 
 const auth = getAuth(app);
@@ -43,7 +47,7 @@ const AuthProvider = ({ children }) => {
     const logOut = () => {
         const logedEmail={email:user.email}
         setLoading(true);
-        axios.post('http://localhost:5000/logout',logedEmail,{withCredentials:true})
+        axios.post('https://jobdoc.vercel.app/logout',logedEmail,{withCredentials:true})
         .then(res=>{
             console.log(res.data);
         })
@@ -58,7 +62,7 @@ const AuthProvider = ({ children }) => {
             setLoading(false);
                 if(currentUser){
                     const logedEmail={email:currentUser.email}
-                    axios.post('http://localhost:5000/jwt',logedEmail,{withCredentials:true})
+                    axios.post('https://jobdoc.vercel.app/jwt',logedEmail,{withCredentials:true})
                     .then(res=>{
                         console.log(res.data);
                         if(res.data.success){
@@ -89,7 +93,9 @@ const AuthProvider = ({ children }) => {
     
     return (
         <AuthContext.Provider value={authInfo}>
-            {children}
+            <HelmetProvider>
+                {children}
+            </HelmetProvider>
         </AuthContext.Provider>
     );
 };

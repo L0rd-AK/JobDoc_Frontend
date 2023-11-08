@@ -4,18 +4,20 @@ import JobTable from "../home/JobTable";
 
 const AllJobs = () => {
     const [jobs, setJobs] = useState([]);
+    const [search,setSearch]=useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/all-jobs', {
+        fetch('https://jobdoc.vercel.app/all-jobs', {
             credentials: "include",
         })
             .then(res => res.json())
             .then(data => {
                 setJobs(data);
             })
+            //====================================
     }, [])
     return (
         <div>
-            <AllJobBanner></AllJobBanner>
+            <AllJobBanner setSearch={setSearch}></AllJobBanner>
             <div className='max-w-7xl mx-auto mt-20 mb-20'>
                 <div>
                     <h1 className="text-black font-bold text-5xl text-center mb-10">Latest jobs</h1>
@@ -36,6 +38,9 @@ const AllJobs = () => {
                         </thead>
                         <tbody>
                             {
+                                search.length>0?
+                                search.map(job => <JobTable key={job._id} job={job}></JobTable>)
+                                :
                                 jobs.map(job => <JobTable key={job._id} job={job}></JobTable>)
                             }
                         </tbody>

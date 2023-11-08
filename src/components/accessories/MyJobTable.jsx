@@ -16,7 +16,7 @@ const MyJobTable = ({job,setMyJobs,myjobs}) => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
-              fetch(`http://localhost:5000/all-jobs/${_id}`, {
+              fetch(`https://jobdoc.vercel.app/all-jobs/${_id}`, {
                 method: "DELETE",
                 headers: {
                     'content-type': 'application/json'
@@ -51,7 +51,7 @@ const MyJobTable = ({job,setMyJobs,myjobs}) => {
                     <div>
                         {Job_Title}
                         <br />
-                        <span className="badge badge-ghost badge-sm bg-black text-white">{Job_Type}</span>
+                        <span className="badge badge-ghost badge-sm bg-black text-white w-[92px] lg:w-auto">{Job_Type}</span>
                     </div>
                 </div>
 

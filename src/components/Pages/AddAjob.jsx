@@ -22,7 +22,7 @@ const AddAjob = () => {
         const Job_Description = form.get('description');
         const posted=true;
         const newJob={Job_Title,Job_Type,Company_Logo,Name,Salary_Range,Job_Applicants_Number,Job_Posting_Date,Application_Deadline,Job_Description,userEmail,posted};
-        fetch(`http://localhost:5000/all-jobs`,{
+        fetch(`https://jobdoc.vercel.app/all-jobs`,{
             method:'POST',
             headers: {
                     "Content-Type": "application/json",
