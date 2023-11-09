@@ -1,7 +1,11 @@
+import { Helmet } from "react-helmet-async";
 
 const Blog = () => {
     return (
         <div className="w-full bg-[#016551] space-y-5 flex flex-col justify-center mt-20">
+            <Helmet>
+                <title>Our Blogs</title>
+            </Helmet>
             <h1 className="text-white text-4xl lg:text-5xl font-bold text-center mt-10">Ckeck Out our Blogs</h1>
             <p className="text-[#b2d0ca] font-medium text-center">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum <br /> deleniti atque corrupti quos dolores</p>
             <div className="mx-5">

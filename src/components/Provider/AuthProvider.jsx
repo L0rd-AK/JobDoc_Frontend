@@ -93,9 +93,7 @@ const AuthProvider = ({ children }) => {
     
     return (
         <AuthContext.Provider value={authInfo}>
-            <HelmetProvider>
-                {children}
-            </HelmetProvider>
+            {children}
         </AuthContext.Provider>
     );
 };

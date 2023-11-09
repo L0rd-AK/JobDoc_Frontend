@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Swal from "sweetalert2";
 import DatePicker from "react-datepicker";
 import { useLoaderData } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 const UpdateJob = () => {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
@@ -53,6 +54,9 @@ const UpdateJob = () => {
 
     return (
         <section className="bg-white ">
+            <Helmet>
+                <title>Update Job</title>
+            </Helmet>
             <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
                 <h2 className="mb-10 text-2xl font-bold text-black ">Update Job Information</h2>
                 <namem action="#">

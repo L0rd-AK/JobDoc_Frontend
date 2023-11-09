@@ -1,11 +1,15 @@
 import { useLoaderData } from "react-router-dom";
 import AppliedJobTable from "../accessories/AppliedJobTable";
+import { Helmet } from "react-helmet-async";
 
 const AppliedJobs = () => {
     const jobs=useLoaderData();
     console.log(jobs);
     return (
         <div className="mt-5 max-w-7xl mx-auto">
+            <Helmet>
+                <title>Applied Jobs</title>
+            </Helmet>
              <h1 className="text-black font-bold text-5xl text-center">Jobs You have applied</h1>
              <div className='mt-10 overflow-auto'>
                 <table className="table">

@@ -19,9 +19,9 @@ const AllJobBanner = ({ setSearch }) => {
                     <h1 className="mb-5 text-5xl font-bold text-white">Need Job? <br /> We got you Homie.</h1>
                     <p className="mb-5 text-white">Find all the latest jobs from reputed companies on Job<span className='text-[#1CA774]'>D</span>oc.</p>
                     <div className="">
-                        <form onSubmit={handelSearch}>
+                        <form className="" onSubmit={handelSearch}>
                             <input name="home-input" type="text" placeholder="Search Jobs..." className="input input-bordered input-accent w-full max-w-xs bg-transparent" />
-                            <button className="btn bg-[#1CA774] px-5 py-2 border-none font-bold text-white hover:btn-outline ml-5">Search</button>
+                            <button className="btn bg-[#1CA774] px-5 py-2 border-none font-bold text-white hover:btn-outline mt-5 lg:mt-0 lg:ml-5">Search</button>
                         </form>
                     </div>
                 </div>

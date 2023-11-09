@@ -4,11 +4,15 @@ import Bonus2 from "../accessories/Bonus2";
 import Testimonial from "../accessories/Testimonial";
 import Banner from "./Banner";
 import JobCatagory from "./JobCatagory";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
     const [searchJob,setSearchJob]=useState([]);
     return (
         <div>
+            <Helmet>
+                <title>Home</title>
+            </Helmet>
             <Banner setSearchJob={setSearchJob}></Banner>
             <JobCatagory searchJob={searchJob}></JobCatagory>
             <Bonus1></Bonus1>

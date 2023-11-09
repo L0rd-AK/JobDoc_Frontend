@@ -19,62 +19,69 @@ import MyJobs from './components/Pages/MyJobs.jsx';
 import PrivateRoute from './components/Private-route/PrivateRoute.jsx';
 import UpdateJob from './components/accessories/UpdateJob.jsx';
 import AppliedJobs from './components/Pages/AppliedJobs.jsx';
+import { HelmetProvider } from 'react-helmet-async';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
     errorElement: <Error></Error>,
-    children:[
+    children: [
       {
-        path:'/',
-        element:<Home></Home>,
+        path: '/',
+        element: <Home></Home>,
+        
       },
       {
-        path:'/login',
+        path: '/login',
         element: <Login></Login>,
       },
       {
-        path:'/register',
+        path: '/register',
         element: <Register></Register>,
       },
       {
-        path:'/all-jobs',
+        path: '/all-jobs',
         element: <AllJobs></AllJobs>,
       },
       {
-        path:'/blogs',
+        path: '/blogs',
         element: <Blog></Blog>,
       },
       {
-        path:'/all-jobs/:id',
+        path: '/all-jobs/:id',
         element: <PrivateRoute><JobDetail></JobDetail></PrivateRoute>,
-        loader: ({params})=> fetch(`https://jobdoc.vercel.app/all-jobs/${params.id}`)
+        loader: ({ params }) => fetch(`https://jobdoc.vercel.app/all-jobs/${params.id}`)
       },
       {
-        path:'/add-a-job',
+        path: '/add-a-job',
         element: <PrivateRoute><AddAjob></AddAjob></PrivateRoute>,
       },
       {
-        path:'/my-jobs',
+        path: '/my-jobs',
         element: <PrivateRoute><MyJobs></MyJobs></PrivateRoute>,
       },
       {
-        path:'/update/:id',
+        path: '/update/:id',
         element: <PrivateRoute><UpdateJob></UpdateJob></PrivateRoute>,
-        loader: ({params})=> fetch(`https://jobdoc.vercel.app/update/${params.id}`)
+        loader: ({ params }) => fetch(`https://jobdoc.vercel.app/update/${params.id}`)
       },
       {
-        path:'/applied-jobs/:id',
+        path: '/applied-jobs/:id',
         element: <PrivateRoute> <AppliedJobs></AppliedJobs> </PrivateRoute>,
-        loader: ({params})=> fetch(`https://jobdoc.vercel.app/applied-jobs/${params.id}`,{credentials: "include",})
+        loader: ({ params }) => fetch(`https://jobdoc.vercel.app/applied-jobs/${params.id}`, { credentials: "include", })
       },
     ]
   },
 ]);
+const helmetContext={
+
+}
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <AuthProvider>
+  <HelmetProvider context={helmetContext}>
+    <React.StrictMode>
+      <AuthProvider>
         <RouterProvider router={router}></RouterProvider>
-    </AuthProvider>
-  </React.StrictMode>,
+      </AuthProvider>
+    </React.StrictMode>
+  </HelmetProvider>,
 )

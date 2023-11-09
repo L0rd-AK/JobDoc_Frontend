@@ -21,7 +21,7 @@ const Banner = ({setSearchJob}) => {
                     <div className="">
                         <form onSubmit={handelSearch}>
                         <input name="home-input" type="text" placeholder="Search Jobs..." className="input input-bordered input-accent w-full max-w-xs bg-transparent" />
-                        <button  className="btn bg-[#1CA774] px-5 py-2 border-none font-bold text-white hover:btn-outline ml-5">Search</button>
+                        <button  className="btn bg-[#1CA774] px-5 py-2 border-none font-bold text-white hover:btn-outline mt-5 lg:mt-0 ml-5">Search</button>
                         </form>
                     </div>
                 </div>

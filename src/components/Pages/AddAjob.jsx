@@ -3,6 +3,8 @@ import { AuthContext } from "../Provider/AuthProvider";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
+// import { Helmet, HelmetProvider } from "react-helmet-async";
 const AddAjob = () => {
     const {user} = useContext(AuthContext);
     const [userEmail,setUserEmail]=useState([])
@@ -46,6 +48,9 @@ const AddAjob = () => {
     },[user.email])
     return (
         <section className="bg-white ">
+            <Helmet>
+                <title>Add A Job</title>
+            </Helmet>
         <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
             <h2 className="mb-10 text-2xl font-bold text-black ">Post a new Job</h2>
             <namem action="#">

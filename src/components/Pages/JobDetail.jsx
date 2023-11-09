@@ -4,6 +4,7 @@ import { LiaDotCircle } from 'react-icons/lia';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../Provider/AuthProvider';
+import { Helmet } from 'react-helmet-async';
 
 const JobDetail = () => {
     const { user } = useContext(AuthContext);
@@ -32,7 +33,10 @@ const JobDetail = () => {
     }
 
     return (
-        <div className='mt-5 pb-16 bg-[#f1f5f8]'>
+        <div className='mt-5 pb-16 bg-[#f1f5f8] '>
+            <Helmet>
+                <title>Job Details</title>
+            </Helmet>
             <div className='bg-[#081721] rounded-r-full mr-10'>
                 <div className=' flex gap-10 max-w-7xl mx-auto'>
                     <div className=' w-3/4 p-5 '>
@@ -41,23 +45,23 @@ const JobDetail = () => {
                             <h3 className='badge bg-white text-black font-semibold'>{Job_Type}</h3>
                             <h3 className='font-bold text-2xl'>Posted By: <span className='text-[#1CA774]'>{Name}</span></h3>
                             <h3 className='font-bold '>Deadline: <span className='text-red-600'>{Application_Deadline?.slice(0,10)}</span></h3>
-                            <div className='flex gap-5'>
+                            <div className='flex flex-col lg:flex-row gap-5'>
                                 <div className='flex items-center gap-3'>
-                                    <div className='text-[#1CA774] text-5xl'><FaBusinessTime></FaBusinessTime></div>
+                                    <div className='text-[#1CA774] text-3xl lg:text-5xl'><FaBusinessTime></FaBusinessTime></div>
                                     <div>
                                         <div className='font-bold'>Department</div>
                                         <div>Software</div>
                                     </div>
                                 </div>
                                 <div className='flex items-center gap-3'>
-                                    <div className='text-[#1CA774] text-5xl'><FaLocationDot></FaLocationDot></div>
+                                    <div className='text-[#1CA774] text-3xl lg:text-5xl'><FaLocationDot></FaLocationDot></div>
                                     <div>
                                         <div className='font-bold'>Location</div>
                                         <div>USA</div>
                                     </div>
                                 </div>
                                 <div className='flex items-center gap-3'>
-                                    <div className='text-[#1CA774] text-5xl'><FaSackDollar></FaSackDollar></div>
+                                    <div className='text-[#1CA774] text-3xl lg:text-5xl'><FaSackDollar></FaSackDollar></div>
                                     <div>
                                         <div className='font-bold'>Salary</div>
                                         <div>${Salary_Range}</div>
@@ -72,8 +76,8 @@ const JobDetail = () => {
                 </div>
             </div>
             {/* ============================================================================ */}
-            <div className='flex gap-5 max-w-7xl mx-auto mt-10'>
-                <div className='w-3/4 bg-white p-10 rounded-lg'>
+            <div className='flex flex-col lg:flex-row gap-5 lg:max-w-7xl mx-auto mt-10'>
+                <div className='lg:w-3/4 bg-white p-10 rounded-lg'>
                     <h1 className='text-black font-bold text-3xl'>Job Description:</h1>
                     {
                         Job_Description
@@ -95,7 +99,7 @@ const JobDetail = () => {
                         <li className='flex items-center'><span className='text-success mr-2'><LiaDotCircle></LiaDotCircle></span> Continuously discover, evaluate, and implement new technologies to maximise development efficiency. Handling complex technical iss</li>
                     </ul>
                 </div>
-                <div className='w-1/4 bg-white p-10 rounded-lg'>
+                <div className='lg:w-1/4 bg-white p-10 rounded-lg'>
                     <h1 className='text-black font-bold text-3xl mb-3'>Ready To Apply?</h1>
                     <p className='text-sm mb-4'>Complete the eligibities checklist now and get started with your online application</p>
                     <div className='space-y-3'>

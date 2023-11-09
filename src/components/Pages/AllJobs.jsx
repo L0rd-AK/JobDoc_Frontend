@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import AllJobBanner from "../accessories/AllJobBanner";
 import JobTable from "../home/JobTable";
+import { Helmet } from "react-helmet-async";
 
 const AllJobs = () => {
     const [jobs, setJobs] = useState([]);
@@ -17,6 +18,9 @@ const AllJobs = () => {
     }, [])
     return (
         <div>
+            <Helmet>
+                <title>All Job</title>
+            </Helmet>
             <AllJobBanner setSearch={setSearch}></AllJobBanner>
             <div className='max-w-7xl mx-auto mt-20 mb-20'>
                 <div>
