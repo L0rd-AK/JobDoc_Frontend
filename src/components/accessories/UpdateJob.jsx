@@ -45,7 +45,7 @@ const UpdateJob = () => {
                 if (data.modifiedCount > 0) {
                     Swal.fire({
                         icon: 'success',
-                        title: 'Product has been Updated',
+                        title: 'Job has been Updated',
                     })
                 }
                 console.log(data);
