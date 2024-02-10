@@ -8,6 +8,7 @@ const CareerTips = () => {
                 <div className="card card-compact w-96 bg-base-100 shadow-xl cursor-pointer">
                     <figure><img src="https://i.ibb.co/9b7ZPFT/career-Tips-1.jpg" alt="Shoes" /></figure>
                     <div className="card-body">
+                    <div className="badge badge-accent">10 February, 2024</div>
                         <h2 className="card-title">Attract Sales And Profits</h2>
                         <p>A job ravenously while Far much that one rank <br />beheld after outside....</p>
                         <div className="card-actions justify-center">
@@ -18,6 +19,10 @@ const CareerTips = () => {
                 <div className="card card-compact w-96 bg-base-100 shadow-xl cursor-pointer">
                     <figure><img src="https://i.ibb.co/hgJkXVb/career-Tips-2.jpg" alt="Shoes" /></figure>
                     <div className="card-body">
+                        <div className="flex gap-3">
+                            <div className="badge badge-accent">10 February, 2024</div>
+                            <div className="badge badge-accent">3 Comments</div>
+                        </div>
                         <h2 className="card-title">5 Tips For Your Job Interviews</h2>
                         <p>Think back over your life. Think about the <br />people that had a....</p>
                         <div className="card-actions justify-end">
@@ -28,6 +33,7 @@ const CareerTips = () => {
                 <div className="card card-compact w-96 bg-base-100 shadow-xl cursor-pointer">
                     <figure><img src="https://i.ibb.co/7K29mNx/career-Tips-3.jpg" alt="Shoes" /></figure>
                     <div className="card-body">
+                        <div className="badge badge-accent">11 February, 2024</div>
                         <h2 className="card-title">An Overworked Newspaper Editor</h2>
                         <p>Ravenously while Far much that one rank beheld after <br />outside ignobly more....</p>
                         <div className="card-actions justify-center inline">

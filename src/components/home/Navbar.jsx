@@ -2,8 +2,10 @@ import { useContext } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import '../home/Navbar.css'
 import { Link, NavLink } from "react-router-dom";
-const Navbar = () => {
+const Navbar = ({Admin}) => {
+    console.log(Admin);
     const { user, logOut } = useContext(AuthContext);
+
     const customLink =
         <>
             {
@@ -15,6 +17,9 @@ const Navbar = () => {
                         <li className="text-lg px-5 py-2"><NavLink to="/add-a-job">Add a Job</NavLink></li>
                         <li className="text-lg px-5 py-2"><NavLink to='/my-jobs'>My Jobs</NavLink></li>
                         <li className="text-lg px-5 py-2"><NavLink to={`/applied-jobs/${user.email}`}>Applied Jobs</NavLink></li>
+                        {
+                            Admin?.role=="Admin" && <li className="text-lg px-5 py-2 text-red-600"><NavLink to={`/dashboard`}>Admin</NavLink></li>
+                        }
                     </div>
                     :
                     <div className='lg:flex'>

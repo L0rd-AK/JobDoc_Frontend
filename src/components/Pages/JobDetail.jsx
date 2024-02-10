@@ -11,10 +11,10 @@ const JobDetail = () => {
     const job = useLoaderData();
     const { _id,Application_Deadline, Salary_Range, Job_Title, Job_Type, Name, Company_Logo, Job_Description,Job_Applicants_Number,userEmail,posted } = job;
 
-    const AppliedJob={Applied: true,Job_Applicants_Number:parseFloat(Job_Applicants_Number)+1,userEmail: user.email}
+    const AppliedJob={Applied: true,Job_Applicants_Number:parseFloat(Job_Applicants_Number)+1,userEmail: user.email,Job_Title,Name,userName:user.displayName}
     const handelApply=()=>{
         fetch(`https://jobdoc.vercel.app/applied-jobs/${_id}`, {
-            method: 'PUT',
+            method: 'POST',
             headers: {
                 "Content-Type": "application/json",
             },
@@ -22,7 +22,7 @@ const JobDetail = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.modifiedCount > 0) {
+                if (data.insertedId) {
                     Swal.fire({
                         icon: 'success',
                         title: 'Successfully Applied',

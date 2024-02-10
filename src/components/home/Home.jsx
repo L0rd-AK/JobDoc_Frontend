@@ -6,9 +6,11 @@ import Banner from "./Banner";
 import JobCatagory from "./JobCatagory";
 import { Helmet } from "react-helmet-async";
 import CareerTips from "../accessories/CareerTips";
+// import { AuthContext } from "../Provider/AuthProvider";
 
 const Home = () => {
     const [searchJob,setSearchJob]=useState([]);
+    
     return (
         <div>
             <Helmet>
