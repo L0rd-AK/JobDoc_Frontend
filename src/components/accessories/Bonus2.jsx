@@ -3,7 +3,8 @@ import Marquee from "react-fast-marquee";
 const Bonus2 = () => {
     return (
        <div className="mt-20">
-        <h1 className="text-4xl text-black text-center font-bold mb-10">Companies that uses JobDoc</h1>
+        <h1 className="text-4xl text-black text-center font-bold mb-3">Companies that uses JobDoc</h1>
+        <hr className="border-[#016551] border-2 mb-10 max-w-[250px] mx-auto rounded-lg"/>
          <div className="bg-[#016551] w-full h-[200px] flex flex-col justify-center">
             <div className="">
                 <Marquee>

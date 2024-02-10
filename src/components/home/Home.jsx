@@ -5,6 +5,7 @@ import Testimonial from "../accessories/Testimonial";
 import Banner from "./Banner";
 import JobCatagory from "./JobCatagory";
 import { Helmet } from "react-helmet-async";
+import CareerTips from "../accessories/CareerTips";
 
 const Home = () => {
     const [searchJob,setSearchJob]=useState([]);
@@ -17,6 +18,7 @@ const Home = () => {
             <JobCatagory searchJob={searchJob}></JobCatagory>
             <Bonus1></Bonus1>
             <Testimonial></Testimonial>
+            <CareerTips></CareerTips>
             <Bonus2></Bonus2>
         </div>
     );
