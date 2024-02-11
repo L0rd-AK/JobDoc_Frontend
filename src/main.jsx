@@ -20,6 +20,9 @@ import PrivateRoute from './components/Private-route/PrivateRoute.jsx';
 import UpdateJob from './components/accessories/UpdateJob.jsx';
 import AppliedJobs from './components/Pages/AppliedJobs.jsx';
 import { HelmetProvider } from 'react-helmet-async';
+import AllUser from './components/dashboard/All_users/AllUser.jsx';
+import DashBoard from './components/dashboard/Dashboard.jsx';
+import AllTeastas from './components/dashboard/applied_jobs/AllTeastas.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -72,6 +75,24 @@ const router = createBrowserRouter([
       },
     ]
   },
+  {
+    path: "/dashboard",
+    element: <DashBoard></DashBoard>,
+    errorElement: <Error></Error>,
+    children:[
+      {
+        path:"/dashboard/all-users",
+        element: <AllUser></AllUser>,
+        loader: () => fetch(`http://localhost:5000/all-users`)
+      },
+      {
+        path:"/dashboard/all-applied-jobs",
+        element: <AllTeastas></AllTeastas>,
+        loader: () => fetch(`http://localhost:5000/all-applied-jobs`)
+      }
+
+    ]
+  }
 ]);
 const helmetContext={
 
