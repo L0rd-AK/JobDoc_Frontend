@@ -23,6 +23,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import AllUser from './components/dashboard/All_users/AllUser.jsx';
 import DashBoard from './components/dashboard/Dashboard.jsx';
 import AllTeastas from './components/dashboard/applied_jobs/AllTeastas.jsx';
+import PostedJob from './components/dashboard/posted_jobs/PostedJob.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -89,6 +90,11 @@ const router = createBrowserRouter([
         path:"/dashboard/all-applied-jobs",
         element: <AllTeastas></AllTeastas>,
         loader: () => fetch(`http://localhost:5000/all-applied-jobs`)
+      },
+      {
+        path:"/dashboard/posted-jobs",
+        element: <PostedJob></PostedJob>,
+        loader: () => fetch(`http://localhost:5000/all-jobs`)
       }
 
     ]
