@@ -24,6 +24,7 @@ import AllUser from './components/dashboard/All_users/AllUser.jsx';
 import DashBoard from './components/dashboard/Dashboard.jsx';
 import AllTeastas from './components/dashboard/applied_jobs/AllTeastas.jsx';
 import PostedJob from './components/dashboard/posted_jobs/PostedJob.jsx';
+import AdminHome from './components/dashboard/AdminHome.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -82,19 +83,23 @@ const router = createBrowserRouter([
     errorElement: <Error></Error>,
     children:[
       {
+        path:"/dashboard/adminHome",
+        element: <AdminHome></AdminHome>
+      },
+      {
         path:"/dashboard/all-users",
         element: <AllUser></AllUser>,
-        loader: () => fetch(`http://localhost:5000/all-users`)
+        loader: () => fetch(`https://jobdoc.vercel.app/all-users`)
       },
       {
         path:"/dashboard/all-applied-jobs",
         element: <AllTeastas></AllTeastas>,
-        loader: () => fetch(`http://localhost:5000/all-applied-jobs`)
+        loader: () => fetch(`https://jobdoc.vercel.app/all-applied-jobs`)
       },
       {
         path:"/dashboard/posted-jobs",
         element: <PostedJob></PostedJob>,
-        loader: () => fetch(`http://localhost:5000/all-jobs`)
+        loader: () => fetch(`https://jobdoc.vercel.app/all-jobs`)
       }
 
     ]

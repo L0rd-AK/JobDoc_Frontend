@@ -18,7 +18,7 @@ const AllUserCard = ({ user }) => {
             if (result.isConfirmed) {
                 // ============
                 const updatedProfile = { role: "Admin" }
-                fetch(`http://localhost:5000/makeAdmin/${user?.userEmail}`, {
+                fetch(`https://jobdoc.vercel.app/makeAdmin/${user?.userEmail}`, {
                     method: 'PUT',
                     headers: {
                         "Content-Type": "application/json",

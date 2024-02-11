@@ -18,7 +18,7 @@ const Navbar = ({Admin}) => {
                         <li className="text-lg px-5 py-2"><NavLink to='/my-jobs'>My Jobs</NavLink></li>
                         <li className="text-lg px-5 py-2"><NavLink to={`/applied-jobs/${user.email}`}>Applied Jobs</NavLink></li>
                         {
-                            Admin?.role=="Admin" && <li className="text-lg px-5 py-2 text-red-600"><NavLink to={`/dashboard`}>Admin</NavLink></li>
+                            Admin?.role=="Admin" && <li className="text-lg px-5 py-2 text-red-600"><NavLink to={`/dashboard/adminHome`}>Admin</NavLink></li>
                         }
                     </div>
                     :
